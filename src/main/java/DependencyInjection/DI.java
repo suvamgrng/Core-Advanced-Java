@@ -15,7 +15,12 @@ public class DI {
     }
 
     public static void main(String[] args) {
-        Service di = new DI();
-        System.out.println(di.getClass());
+        // Create service dependency
+        Service service = new Service();
+
+        // Create injection
+        DI di = new DI(service);
+        di.service.doSomething();
+
     }
 }
